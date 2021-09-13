@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class AuthService {
+  getUserById(id: number) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -35,6 +38,10 @@ export class AuthService {
 
   getByIdUser(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://blogleobe.herokuapp.com/usuarios/${id}`, this.token)
+  }
+
+  putUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://blogleobe.herokuapp.com/usuarios/alterar', usuario, this.token)
   }
 
   logado(){
