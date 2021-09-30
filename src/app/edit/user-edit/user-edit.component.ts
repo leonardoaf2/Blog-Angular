@@ -16,6 +16,7 @@ export class UserEditComponent implements OnInit {
   idUser: number
   confirmarSenha: string
   tipoUsuario: string
+  senha: string
 
   constructor(
     private authService: AuthService,
